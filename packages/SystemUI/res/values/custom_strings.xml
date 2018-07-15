@@ -122,4 +122,7 @@
 
     <!-- 5G toggle in internet dialog -->
     <string name="enable_fiveg">Enable 5G</string>
+
+    <!-- Name of the clock in status bar [CHAR LIMIT=30] -->
+    <string name="clock">Clock</string>
 </resources>
