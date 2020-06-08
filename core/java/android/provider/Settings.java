@@ -5902,6 +5902,20 @@ public final class Settings {
         public static final String SENSOR_BLOCK = "sensor_block";
 
         /**
+         * Sensor blocked packages
+         * @hide
+         */
+        @Readable
+        public static final String SENSOR_BLOCKED_APP = "sensor_blocked_app";
+
+        /**
+         * Sensor blocked packages dummy
+         * @hide
+         */
+        @Readable
+        public static final String SENSOR_BLOCKED_APP_DUMMY = "sensor_blocked_app_dummy";
+
+        /**
          * Reader mode
          * 0 = 0ff, 1 = on
          * @hide
@@ -6313,7 +6327,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(CAMERA_FLASH_NOTIFICATION);
             PRIVATE_SETTINGS.add(SCREEN_FLASH_NOTIFICATION);
             PRIVATE_SETTINGS.add(SCREEN_FLASH_NOTIFICATION_COLOR);
-<<<<<<< HEAD
             PRIVATE_SETTINGS.add(FORCE_FULLSCREEN_CUTOUT_APPS);
             PRIVATE_SETTINGS.add(AUTO_BRIGHTNESS_ONE_SHOT);
             PRIVATE_SETTINGS.add(DISPLAY_TEMPERATURE_DAY);
@@ -6334,29 +6347,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(VIBRATE_ON_CONNECT);
             PRIVATE_SETTINGS.add(VIBRATE_ON_CALLWAITING);
             PRIVATE_SETTINGS.add(VIBRATE_ON_DISCONNECT);
-=======
-            PRIVATE_SETTINGS.add(CALL_CONNECTED_TONE_ENABLED);
-            PRIVATE_SETTINGS.add(GESTURES_ENABLED);
-            PRIVATE_SETTINGS.add(GESTURE_DOUBLE_TAP);
-            PRIVATE_SETTINGS.add(GESTURE_SINGLE_TAP);
-            PRIVATE_SETTINGS.add(GESTURE_DRAW_V);
-            PRIVATE_SETTINGS.add(GESTURE_DRAW_INVERSE_V);
-            PRIVATE_SETTINGS.add(GESTURE_DRAW_O);
-            PRIVATE_SETTINGS.add(GESTURE_DRAW_M);
-            PRIVATE_SETTINGS.add(GESTURE_DRAW_W);
-            PRIVATE_SETTINGS.add(GESTURE_DRAW_S);
-            PRIVATE_SETTINGS.add(GESTURE_DRAW_ARROW_LEFT);
-            PRIVATE_SETTINGS.add(GESTURE_DRAW_ARROW_RIGHT);
-            PRIVATE_SETTINGS.add(GESTURE_ONE_FINGER_SWIPE_UP);
-            PRIVATE_SETTINGS.add(GESTURE_ONE_FINGER_SWIPE_RIGHT);
-            PRIVATE_SETTINGS.add(GESTURE_ONE_FINGER_SWIPE_DOWN);
-            PRIVATE_SETTINGS.add(GESTURE_ONE_FINGER_SWIPE_LEFT);
-            PRIVATE_SETTINGS.add(LOCKSCREEN_MEDIA_METADATA);
-            PRIVATE_SETTINGS.add(LOCKSCREEN_ALBUMART_FILTER);
-            PRIVATE_SETTINGS.add(LS_MEDIA_FILTER_BLUR_RADIUS);
-            PRIVATE_SETTINGS.add(LS_MEDIA_ARTWORK_FADE_PERCENT);
             PRIVATE_SETTINGS.add(SENSOR_BLOCK);
->>>>>>> 2212bacb90bc... FWB: Sensor block per-package switch (1/2)
         }
 
         /**
