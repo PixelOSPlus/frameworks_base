@@ -6215,6 +6215,13 @@ public final class Settings {
         public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
 
         /**
+         * Gesture navbar length mode.
+         * Supported modes: 0 for short length, 1 for normal and 2 for long.
+         * @hide
+         */
+        public static final String GESTURE_NAVBAR_LENGTH_MODE = "gesture_navbar_length_mode";
+
+        /**
          * Whether to enable smart 5G mode
          * @hide
          */
