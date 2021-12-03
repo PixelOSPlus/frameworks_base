@@ -174,6 +174,7 @@ public class CommandQueue extends IStatusBar.Stub implements
     private static final int MSG_CONFIRM_IMMERSIVE_PROMPT = 77 << MSG_SHIFT;
     private static final int MSG_IMMERSIVE_CHANGED = 78 << MSG_SHIFT;
     private static final int MSG_TOGGLE_CAMERA_FLASH = 79 << MSG_SHIFT;
+    private static final int MSG_SET_BLOCKED_GESTURAL_NAVIGATION = 80 << MSG_SHIFT;
 
     // Device Integration: new case to handler disable message from VirtualDisplay
     private static final int MSG_DISABLE_VD = 100 << MSG_SHIFT;
@@ -522,6 +523,8 @@ public class CommandQueue extends IStatusBar.Stub implements
          * @see IStatusBar#toggleCameraFlash
          */
         default void toggleCameraFlash() {}
+
+        default void setBlockedGesturalNavigation(boolean blocked) {}
     }
 
     @VisibleForTesting
@@ -1401,6 +1404,16 @@ public class CommandQueue extends IStatusBar.Stub implements
         }
     }
 
+    @Override
+    public void setBlockedGesturalNavigation(boolean blocked) {
+        synchronized (mLock) {
+            if (mHandler.hasMessages(MSG_SET_BLOCKED_GESTURAL_NAVIGATION)) {
+                mHandler.removeMessages(MSG_SET_BLOCKED_GESTURAL_NAVIGATION);
+            }
+            mHandler.obtainMessage(MSG_SET_BLOCKED_GESTURAL_NAVIGATION, blocked).sendToTarget();
+        }
+    }
+
     private final class H extends Handler {
         private H(Looper l) {
             super(l);
@@ -1884,6 +1897,9 @@ public class CommandQueue extends IStatusBar.Stub implements
                     for (int i = 0; i < mCallbacks.size(); i++) {
                         mCallbacks.get(i).toggleCameraFlash();
                     }
+                    break;
+                case MSG_SET_BLOCKED_GESTURAL_NAVIGATION:
+                    mCallbacks.forEach(cb -> cb.setBlockedGesturalNavigation((Boolean) msg.obj));
                     break;
             }
         }

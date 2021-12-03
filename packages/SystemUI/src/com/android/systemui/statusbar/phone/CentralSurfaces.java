@@ -378,6 +378,8 @@ public interface CentralSurfaces extends Dumpable, LifecycleOwner {
 
     void extendDozePulse();
 
+    void setBlockedGesturalNavigation(boolean blocked);
+
     GameSpaceManager getGameSpaceManager();
 
     public static class KeyboardShortcutsMessage {
