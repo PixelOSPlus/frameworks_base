@@ -69,6 +69,7 @@ import java.util.List;
 import java.util.concurrent.TimeoutException;
 
 import com.android.internal.util.custom.MeizuPropsUtils;
+import com.android.internal.util.custom.GamesPropsUtils;
 
 /**
  * Base class for implementing application instrumentation code.  When running
@@ -1284,8 +1285,10 @@ public class Instrumentation {
         Application app = getFactory(context.getPackageName())
                 .instantiateApplication(cl, className);
         app.attach(context);
+        String packageName = context.getPackageName();
         PropImitationHooks.setProps(context);
         MeizuPropsUtils.setProps(app);
+        GamesPropsUtils.setProps(packageName);
         return app;
     }
     
@@ -1303,8 +1306,10 @@ public class Instrumentation {
             ClassNotFoundException {
         Application app = (Application)clazz.newInstance();
         app.attach(context);
+        String packageName = context.getPackageName();
         PropImitationHooks.setProps(context);
         MeizuPropsUtils.setProps(app);
+        GamesPropsUtils.setProps(packageName);
         return app;
     }
 
