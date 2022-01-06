@@ -89,6 +89,11 @@
         android:icon="@drawable/ic_statusbar_data_saver" />
 
     <com.android.systemui.tuner.StatusBarSwitch
+        android:icon="@*android:drawable/ic_battery"
+        android:key="battery"
+        android:title="@string/battery" />
+
+    <com.android.systemui.tuner.StatusBarSwitch
         android:key="alarm_clock"
         android:title="@string/status_bar_alarm"
         android:icon="@drawable/ic_statusbar_alarm" />
@@ -108,7 +113,7 @@
         android:title="@string/quick_settings_camera_label"
         android:icon="@drawable/ic_statusbar_camera" />
 
-    <!--com.android.systemui.tuner.BatteryPreference
+    <!--com.android.systemui.tuner.StatusBarSwitch
         android:title="@string/battery"
         android:icon="@*android:drawable/ic_battery"
         android:summary="%s"
