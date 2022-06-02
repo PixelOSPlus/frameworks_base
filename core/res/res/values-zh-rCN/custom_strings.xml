@@ -67,4 +67,5 @@
     <string name="poweroff_alarm_body">检测到一个闹钟。 您可以关闭手机，手机会在闹钟响铃前 2 分钟开机。</string>
     <!-- Pocket Lock -->
     <string name="pocket_lock_message_long_press">长按电源键以解锁</string>
+    <string name="gesture_locked_warning">再次滑动以解锁手势</string>
 </resources>
