@@ -2900,7 +2900,11 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
                             userLevel);
                 }
             }
-            seekBar.performHapticFeedback(CLOCK_TICK);
+            final boolean doVibrate = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.VOLUME_SLIDER_HAPTIC_FEEDBACK, 0) != 0;
+            if (doVibrate) {
+                seekBar.performHapticFeedback(CLOCK_TICK);
+            }
         }
 
         @Override
